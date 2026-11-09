@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angelo Poliziano | Renaissance Life, Philology & Medicean Culture</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS with Custom Theme -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        parchment: {
+                            50: '#FDFBF7',
+                            100: '#F8F3E9',
+                            200: '#EFE5D3',
+                            300: '#E2D3B8',
+                            400: '#D1BB96',
+                            700: '#5C4E38',
+                            800: '#3D3323',
+                            900: '#261F14',
+                        },
+                        burgundy: {
+                            500: '#A62B45',
+                            600: '#8C2036',
+                            700: '#6B1728',
+                            800: '#4D0E1B',
+                            900: '#330810',
+                        },
+                        gold: {
+                            400: '#D4AF37',
+                            500: '#B8860B',
+                            600: '#996F04',
+                            700: '#755402',
+                        },
+                        ink: {
+                            500: '#736B60',
+                            700: '#453E36',
+                            800: '#2A241F',
+                            900: '#181411',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        cinzel: ['"Cinzel"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'flourish': "radial-gradient(circle, rgba(107,23,40,0.05) 0%, rgba(248,243,233,0) 70%)"
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Academic Renaissance Styling */
+        body {
+            background-color: #F8F3E9;
+            color: #2A241F;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Subtle drop cap styling */
+        .drop-cap::first-letter {
+            font-family: 'Cinzel', serif;
+            float: left;
+            font-size: 3.5rem;
+            line-height: 2.8rem;
+            padding-top: 4px;
+            padding-right: 10px;
+            padding-left: 3px;
+            color: #6B1728;
+            font-weight: 700;
+        }
+
+        /* Decorative flourishes */
+        .flourish-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        .flourish-divider::before, .flourish-divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #D1BB96;
+            margin: 0 1rem;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #EFE5D3;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8C2036;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6B1728;
+        }
+    </style>
+</head>
+<body class="selection:bg-burgundy-700 selection:text-parchment-100 flex flex-col min-h-screen">
+
+    <!-- TOP ANNOUNCEMENT / CITATION STRIP -->
+    <aside aria-label="Notice" class="bg-burgundy-900 text-parchment-200 text-xs py-2 px-4 border-b border-gold-600/30">
+        <div class="max-w-7xl mx-mx-auto flex justify-between items-center px-4 font-serif italic">
+            <span><i class="fa-solid fa-scroll text-gold-400 mr-2"></i> An Ongoing Digital Critical Biography & Primary Source Archive</span>
+            <span class="hidden md:inline text-parchment-300 font-sans not-italic text-[11px]">Edited by Dr. Elena Vance • Dept. of Renaissance Studies</span>
+        </div>
+    </aside>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-parchment-100/95 backdrop-blur-md border-b border-parchment-300 shadow-sm transition-all duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- BRAND / LOGO -->
+                <a href="#overview" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-full bg-burgundy-700 text-gold-400 flex items-center justify-center font-cinzel font-bold text-xl border border-gold-500 shadow-sm group-hover:bg-burgundy-800 transition">
+                        P
+                    </div>
+                    <div>
+                        <span class="block font-cinzel font-bold text-lg sm:text-xl tracking-wider text-burgundy-900 leading-tight">ANGELO POLIZIANO</span>
+                        <span class="block text-[10px] uppercase tracking-widest text-ink-500 font-sans">Biography & Scholar Portal</span>
+                    </div>
+                </a>
+
+                <!-- DESKTOP NAVIGATION LINKS -->
+                <nav class="hidden md:flex items-center space-x-8 font-serif font-semibold text-ink-800 text-base">
+                    <a href="#overview" class="hover:text-burgundy-700 transition-colors py-1 border-b-2 border-transparent hover:border-burgundy-700">Overview</a>
+                    <a href="#timeline" class="hover:text-burgundy-700 transition-colors py-1 border-b-2 border-transparent hover:border-burgundy-700">Chronology</a>
+                    <a href="#essays" class="hover:text-burgundy-700 transition-colors py-1 border-b-2 border-transparent hover:border-burgundy-700">Essays & Notes</a>
+                    <a href="#archive" class="hover:text-burgundy-700 transition-colors py-1 border-b-2 border-transparent hover:border-burgundy-700">Manuscripts</a>
+                    <a href="#author" class="hover:text-burgundy-700 transition-colors py-1 border-b-2 border-transparent hover:border-burgundy-700">Author Bio</a>
+                </nav>
+
+                <!-- CTA BUTTON & MOBILE TOGGLE -->
+                <div class="flex items-center space-x-4">
+                    <a href="#subscribe" class="hidden sm:inline-flex items-center space-x-2 bg-burgundy-700 hover:bg-burgundy-800 text-parchment-100 text-xs font-semibold px-4 py-2.5 rounded-md border border-gold-600 shadow-sm transition-all duration-200">
+                        <i class="fa-solid fa-feather-pointed text-gold-400"></i>
+                        <span>Subscribe for Updates</span>
+                    </a>
+                    
+                    <button id="mobile-menu-btn" type="button" class="md:hidden p-2 text-ink-800 hover:text-burgundy-700 focus:outline-none" aria-label="Toggle menu">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MOBILE MENU POPUP -->
+        <div id="mobile-menu" class="hidden md:hidden bg-parchment-200 border-b border-parchment-300 px-4 pt-2 pb-6 space-y-3 font-serif text-lg">
+            <a href="#overview" class="block py-2 text-ink-800 hover:text-burgundy-700 border-b border-parchment-300">Overview</a>
+            <a href="#timeline" class="block py-2 text-ink-800 hover:text-burgundy-700 border-b border-parchment-300">Chronology</a>
+            <a href="#essays" class="block py-2 text-ink-800 hover:text-burgundy-700 border-b border-parchment-300">Essays & Notes</a>
+            <a href="#archive" class="block py-2 text-ink-800 hover:text-burgundy-700 border-b border-parchment-300">Manuscripts & Sources</a>
+            <a href="#author" class="block py-2 text-ink-800 hover:text-burgundy-700 border-b border-parchment-300">Author Biography</a>
+            <a href="#subscribe" class="inline-block mt-2 bg-burgundy-700 text-parchment-100 text-sm px-4 py-2 rounded border border-gold-500">Subscribe for Updates</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        
+        <!-- HERO SECTION -->
+        <section id="overview" class="relative py-16 md:py-24 bg-flourish overflow-hidden border-b border-parchment-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- HERO LEFT TEXT -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        
+                        <div class="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 rounded-full bg-parchment-200 border border-gold-500/40 text-burgundy-800 text-xs font-semibold tracking-wide">
+                            <span class="w-2 h-2 rounded-full bg-gold-500 animate-pulse"></span>
+                            <span>A Renaissance Biography Project (1454–1494)</span>
+                        </div>
+
+                        <h1 class="font-cinzel text-3xl sm:text-5xl lg:text-6xl font-extrabold text-burgundy-900 leading-tight">
+                            Scholar, Poet & Tutor to the Medici
+                        </h1>
+
+                        <p class="font-serif text-lg sm:text-xl text-ink-700 leading-relaxed drop-cap">
+                            Angelo Ambrogini, known to history as <strong>Poliziano</strong> (Politian), was the towering intellect of Lorenzo de’ Medici’s Laurentian circle. Translator of Homer, master of Latin and Greek philology, and pioneer of modern textual criticism, his vibrant Italian poetry redefined Renaissance humanism.
+                        </p>
+
+                        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="#timeline" class="w-full sm:w-auto px-6 py-3.5 rounded-md bg-burgundy-700 text-parchment-100 font-serif font-bold text-base hover:bg-burgundy-800 transition shadow-md flex items-center justify-center space-x-2 border border-gold-600">
+                                <span>Explore Life Chronology</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                            <a href="#essays" class="w-full sm:w-auto px-6 py-3.5 rounded-md bg-parchment-200 hover:bg-parchment-300 text-ink-800 font-serif font-bold text-base transition border border-parchment-400 flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-book-open text-burgundy-700"></i>
+                                <span>Read Research Essays</span>
+                            </a>
+                        </div>
+
+                        <!-- STATS / METRICS -->
+                        <div class="pt-8 border-t border-parchment-300 grid grid-cols-3 gap-4 text-center lg:text-left">
+                            <div>
+                                <span class="block font-cinzel text-2xl sm:text-3xl font-bold text-burgundy-800">1475</span>
+                                <span class="text-xs text-ink-500 uppercase font-medium">Stanze per la Giostra</span>
+                            </div>
+                            <div>
+                                <span class="block font-cinzel text-2xl sm:text-3xl font-bold text-burgundy-800">100+</span>
+                                <span class="text-xs text-ink-500 uppercase font-medium">Miscellanea Chapters</span>
+                            </div>
+                            <div>
+                                <span class="block font-cinzel text-2xl sm:text-3xl font-bold text-burgundy-800">40 Yrs</span>
+                                <span class="text-xs text-ink-500 uppercase font-medium">Lifetime span</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- HERO RIGHT CARD PORTRAIT -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative max-w-md w-full bg-parchment-100 p-4 rounded-lg border-2 border-gold-500/60 shadow-xl">
+                            <!-- Frame ornaments -->
+                            <div class="absolute -top-3 -left-3 w-6 h-6 border-t-2 border-l-2 border-burgundy-700"></div>
+                            <div class="absolute -top-3 -right-3 w-6 h-6 border-t-2 border-r-2 border-burgundy-700"></div>
+                            <div class="absolute -bottom-3 -left-3 w-6 h-6 border-b-2 border-l-2 border-burgundy-700"></div>
+                            <div class="absolute -bottom-3 -right-3 w-6 h-6 border-b-2 border-r-2 border-burgundy-700"></div>
+
+                            <div class="relative overflow-hidden rounded border border-parchment-300 bg-parchment-200">
+                                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80" 
+                                     alt="Renaissance artwork depicting scholars" 
+                                     class="w-full h-80 object-cover filter contrast-105 brightness-95">
+                                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-burgundy-900 via-burgundy-900/80 to-transparent p-4 text-parchment-100">
+                                    <p class="font-cinzel text-sm font-semibold tracking-wide text-gold-400">Puer Homericus</p>
+                                    <p class="font-serif text-xs italic text-parchment-200">"The Homeric Boy" who translated Book II of the Iliad into Latin hexameters at age 16.</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 p-3 bg-parchment-200 rounded border border-parchment-300 text-xs text-ink-700 font-serif italic text-center">
+                                "His voice was so musical, his Greek so pure, that scholars believed Homer himself had returned to speak through Florence."
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE TIMELINE SECTION -->
+        <section id="timeline" class="py-16 md:py-24 bg-parchment-100 border-b border-parchment-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="font-cinzel text-xs font-bold tracking-widest text-burgundy-700 uppercase">Chronological Narrative</span>
+                    <h2 class="font-cinzel text-3xl sm:text-4xl font-extrabold text-burgundy-900 mt-2">The Life & Times of Poliziano</h2>
+                    <div class="flourish-divider">
+                        <i class="fa-solid fa-feather text-gold-500 text-sm"></i>
+                    </div>
+                    <p class="font-serif text-base text-ink-700">Explore key milestones in Poliziano's life, from his origins in Montepulciano to the height of his influence in Laurentian Florence.</p>
+                    
+                    <!-- Filter Buttons -->
+                    <div class="mt-8 flex flex-wrap justify-center gap-2 font-serif text-sm">
+                        <button onclick="filterTimeline('all')" class="timeline-filter-btn active px-4 py-1.5 rounded-full bg-burgundy-700 text-parchment-100 border border-burgundy-700 shadow-sm transition">All Events</button>
+                        <button onclick="filterTimeline('early')" class="timeline-filter-btn px-4 py-1.5 rounded-full bg-parchment-200 text-ink-800 hover:bg-parchment-300 border border-parchment-400 transition">Youth & Education</button>
+                        <button onclick="filterTimeline('medici')" class="timeline-filter-btn px-4 py-1.5 rounded-full bg-parchment-200 text-ink-800 hover:bg-parchment-300 border border-parchment-400 transition">Medicean Circle</button>
+                        <button onclick="filterTimeline('works')" class="timeline-filter-btn px-4 py-1.5 rounded-full bg-parchment-200 text-ink-800 hover:bg-parchment-300 border border-parchment-400 transition">Major Works</button>
+                    </div>
+                </div>
+
+                <!-- TIMELINE CONTAINER -->
+                <div class="relative max-w-4xl mx-auto before:absolute before:inset-0 before:left-1/2 before:-ml-px before:w-0.5 before:bg-parchment-400">
+                    
+                    <!-- Event 1 -->
+                    <div class="timeline-item mb-12 relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group" data-category="early">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-burgundy-700 text-gold-400 border-2 border-parchment-100 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 font-cinzel font-bold text-xs">
+                            1454
+                        </div>
+                        <div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] bg-parchment-50 p-6 rounded-lg border border-parchment-300 shadow-sm hover:shadow-md transition">
+                            <span class="text-xs font-semibold text-burgundy-700 font-sans tracking-wider uppercase">Montepulciano</span>
+                            <h3 class="font-cinzel text-xl font-bold text-ink-900 mt-1">Birth of Angelo Ambrogini</h3>
+                            <p class="font-serif text-sm text-ink-700 mt-2 leading-relaxed">
+                                Born on July 14 in Montepulciano, Tuscany. Following the murder of his father, Benedetto, a lawyer devoted to the Medici family, young Angelo moved to Florence to seek education.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Event 2 -->
+                    <div class="timeline-item mb-12 relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group" data-category="early">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-burgundy-700 text-gold-400 border-2 border-parchment-100 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 font-cinzel font-bold text-xs">
+                            1470
+                        </div>
+                        <div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] bg-parchment-50 p-6 rounded-lg border border-parchment-300 shadow-sm hover:shadow-md transition">
+                            <span class="text-xs font-semibold text-burgundy-700 font-sans tracking-wider uppercase">Florence</span>
+                            <h3 class="font-cinzel text-xl font-bold text-ink-900 mt-1">Translation of Homer's Iliad</h3>
+                            <p class="font-serif text-sm text-ink-700 mt-2 leading-relaxed">
+                                At just 16 years old, Poliziano began translating Books II–V of Homer’s <em>Iliad</em> into Latin hexameters. His mastery earned him entry into the household of Lorenzo "il Magnifico" de' Medici.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Event 3 -->
+                    <div class="timeline-item mb-12 relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group" data-category="medici">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-burgundy-700 text-gold-400 border-2 border-parchment-100 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 font-cinzel font-bold text-xs">
+                            1475
+                        </div>
+                        <div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] bg-parchment-50 p-6 rounded-lg border border-parchment-300 shadow-sm hover:shadow-md transition">
+                            <span class="text-xs font-semibold text-burgundy-700 font-sans tracking-wider uppercase">Vernacular Poetry</span>
+                            <h3 class="font-cinzel text-xl font-bold text-ink-900 mt-1">Stanze per la Giostra</h3>
+                            <p class="font-serif text-sm text-ink-700 mt-2 leading-relaxed">
+                                Composed for Giuliano de' Medici's jousting tournament victory. The poem stands as a masterpiece of Italian stanzaic verse, blending classical mythology with Neoplatonist ideals of beauty and love.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Event 4 -->
+                    <div class="timeline-item mb-12 relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group" data-category="medici">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-burgundy-700 text-gold-400 border-2 border-parchment-100 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 font-cinzel font-bold text-xs">
+                            1478
+                        </div>
+                        <div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] bg-parchment-50 p-6 rounded-lg border border-parchment-300 shadow-sm hover:shadow-md transition">
+                            <span class="text-xs font-semibold text-burgundy-700 font-sans tracking-wider uppercase">Pazzi Conspiracy</span>
+                            <h3 class="font-cinzel text-xl font-bold text-ink-900 mt-1">Coniurationis Commentarium</h3>
+                            <p class="font-serif text-sm text-ink-700 mt-2 leading-relaxed">
+                                Poliziano witnessed the violent Pazzi conspiracy in the Florence Cathedral, personally helping shield Lorenzo. He authored the official historical commentary on the conspiracy shortly thereafter.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Event 5 -->
+                    <div class="timeline-item mb-12 relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group" data-category="works">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-burgundy-700 text-gold-400 border-2 border-parchment-100 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 font-cinzel font-bold text-xs">
+                            1489
+                        </div>
+                        <div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] bg-parchment-50 p-6 rounded-lg border border-parchment-300 shadow-sm hover:shadow-md transition">
+                            <span class="text-xs font-semibold text-burgundy-700 font-sans tracking-wider uppercase">Philology Milestone</span>
+                            <h3 class="font-cinzel text-xl font-bold text-ink-900 mt-1">Publication of Miscellaneorum Centuria Prima</h3>
+                            <p class="font-serif text-sm text-ink-700 mt-2 leading-relaxed">
+                                A groundbreaking work in modern textual analysis. Poliziano pioneered historical collation of manuscripts, establishing principles of textual genealogy still used by philologists today.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Event 6 -->
+                    <div class="timeline-item relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group" data-category="works">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-burgundy-700 text-gold-400 border-2 border-parchment-100 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 font-cinzel font-bold text-xs">
+                            1494
+                        </div>
+                        <div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] bg-parchment-50 p-6 rounded-lg border border-parchment-300 shadow-sm hover:shadow-md transition">
+                            <span class="text-xs font-semibold text-burgundy-700 font-sans tracking-wider uppercase">Final Days</span>
+                            <h3 class="font-cinzel text-xl font-bold text-ink-900 mt-1">Death in Florence</h3>
+                            <p class="font-serif text-sm text-ink-700 mt-2 leading-relaxed">
+                                Passed away on September 24, 1494, amidst the turmoil of Savonarola's influence and the French invasion of Italy. Interred at the Convent of San Marco in Florence.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ESSAYS & RESEARCH NOTES SECTION -->
+        <section id="essays" class="py-16 md:py-24 bg-parchment-200 border-b border-parchment-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div>
+                        <span class="font-cinzel text-xs font-bold tracking-widest text-burgundy-700 uppercase">Historiography & Scholarship</span>
+                        <h2 class="font-cinzel text-3xl sm:text-4xl font-extrabold text-burgundy-900 mt-2">Research Notes & Essays</h2>
+                    </div>
+                    <p class="font-serif text-ink-700 max-w-md mt-4 md:mt-0 text-sm">
+                        In-depth articles examining primary manuscripts, poetic forms, and Poliziano's role in the intellectual networks of XV-century Europe.
+                    </p>
+                </div>
+
+                <!-- ESSAY GRID -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Essay Card 1 -->
+                    <article class="bg-parchment-50 rounded-lg border border-parchment-300 shadow-sm hover:shadow-md transition flex flex-col justify-between overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between text-xs text-ink-500 font-sans mb-3">
+                                <span><i class="fa-regular fa-folder text-gold-600 mr-1"></i> Textual Philology</span>
+                                <span>12 min read</span>
+                            </div>
+                            <h3 class="font-cinzel text-xl font-bold text-burgundy-900 mb-3 hover:text-burgundy-700 cursor-pointer" onclick="openEssayModal('essay1')">
+                                Collating Manuscripts: The Empirical Method of the <em>Miscellanea</em>
+                            </h3>
+                            <p class="font-serif text-sm text-ink-700 line-clamp-3">
+                                An analysis of Poliziano’s revolutionary shift from subjective emendation to systematic manuscript collation in analyzing Quintilian and Catullus.
+                            </p>
+                        </div>
+                        <div class="px-6 py-4 bg-parchment-100/60 border-t border-parchment-300 flex items-center justify-between">
+                            <span class="text-xs font-serif text-ink-600 italic">Published: Nov 2026</span>
+                            <button onclick="openEssayModal('essay1')" class="text-xs font-semibold font-serif text-burgundy-700 hover:text-burgundy-900 flex items-center space-x-1">
+                                <span>Read Full Essay</span>
+                                <i class="fa-solid fa-angle-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Essay Card 2 -->
+                    <article class="bg-parchment-50 rounded-lg border border-parchment-300 shadow-sm hover:shadow-md transition flex flex-col justify-between overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between text-xs text-ink-500 font-sans mb-3">
+                                <span><i class="fa-regular fa-folder text-gold-600 mr-1"></i> Vernacular Literature</span>
+                                <span>18 min read</span>
+                            </div>
+                            <h3 class="font-cinzel text-xl font-bold text-burgundy-900 mb-3 hover:text-burgundy-700 cursor-pointer" onclick="openEssayModal('essay2')">
+                                Myth, Allegory, and Memory in <em>Stanze per la Giostra</em>
+                            </h3>
+                            <p class="font-serif text-sm text-ink-700 line-clamp-3">
+                                How Poliziano synthesized Claudian's classical panegyric, Ovidian metamorphosis, and Ficino’s Neoplatonism into Italian vernacular verse.
+                            </p>
+                        </div>
+                        <div class="px-6 py-4 bg-parchment-100/60 border-t border-parchment-300 flex items-center justify-between">
+                            <span class="text-xs font-serif text-ink-600 italic">Published: Oct 2026</span>
+                            <button onclick="openEssayModal('essay2')" class="text-xs font-semibold font-serif text-burgundy-700 hover:text-burgundy-900 flex items-center space-x-1">
+                                <span>Read Full Essay</span>
+                                <i class="fa-solid fa-angle-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Essay Card 3 -->
+                    <article class="bg-parchment-50 rounded-lg border border-parchment-300 shadow-sm hover:shadow-md transition flex flex-col justify-between overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between text-xs text-ink-500 font-sans mb-3">
+                                <span><i class="fa-regular fa-folder text-gold-600 mr-1"></i> Medici Court Life</span>
+                                <span>15 min read</span>
+                            </div>
+                            <h3 class="font-cinzel text-xl font-bold text-burgundy-900 mb-3 hover:text-burgundy-700 cursor-pointer" onclick="openEssayModal('essay3')">
+                                Tensions at Fiesole: Tutor to Piero de' Medici & Clarice Orsini
+                            </h3>
+                            <p class="font-serif text-sm text-ink-700 line-clamp-3">
+                                Re-examining the correspondence of 1479 regarding Poliziano's educational disputes with Clarice Orsini over humanistic versus pious instruction.
+                            </p>
+                        </div>
+                        <div class="px-6 py-4 bg-parchment-100/60 border-t border-parchment-300 flex items-center justify-between">
+                            <span class="text-xs font-serif text-ink-600 italic">Published: Sep 2026</span>
+                            <button onclick="openEssayModal('essay3')" class="text-xs font-semibold font-serif text-burgundy-700 hover:text-burgundy-900 flex items-center space-x-1">
+                                <span>Read Full Essay</span>
+                                <i class="fa-solid fa-angle-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- MANUSCRIPTS & PRIMARY SOURCES SHOWCASE -->
+        <section id="archive" class="py-16 md:py-24 bg-parchment-100 border-b border-parchment-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="font-cinzel text-xs font-bold tracking-widest text-burgundy-700 uppercase">Archival Manuscripts</span>
+                    <h2 class="font-cinzel text-3xl sm:text-4xl font-extrabold text-burgundy-900 mt-2">Primary Sources & Marginalia</h2>
+                    <div class="flourish-divider">
+                        <i class="fa-solid fa-book-bookmark text-gold-500 text-sm"></i>
+                    </div>
+                    <p class="font-serif text-base text-ink-700">Digital previews of surviving codices containing Poliziano's handwriting, glosses, and correspondence preserved in the Laurentian Library.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <div class="bg-parchment-50 border border-parchment-300 p-4 rounded-lg shadow-sm hover:border-gold-500 transition">
+                        <div class="h-48 bg-parchment-300 rounded overflow-hidden relative group">
+                            <img src="https://images.unsplash.com/photo-1461360370896-922624d12aa1?auto=format&fit=crop&w=600&q=80" alt="Codex Laurentianus" class="w-full h-full object-cover filter contrast-110">
+                            <div class="absolute inset-0 bg-burgundy-900/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                                <span class="bg-parchment-100 text-burgundy-900 text-xs font-serif font-bold px-3 py-1.5 rounded">View Shelf Mark</span>
+                            </div>
+                        </div>
+                        <h4 class="font-cinzel font-bold text-ink-900 mt-4 text-base">Codex Laurentianus 32.45</h4>
+                        <p class="font-serif text-xs text-ink-600 mt-1">Contains Greek epigrams copied and annotated by Poliziano in 1473.</p>
+                    </div>
+
+                    <div class="bg-parchment-50 border border-parchment-300 p-4 rounded-lg shadow-sm hover:border-gold-500 transition">
+                        <div class="h-48 bg-parchment-300 rounded overflow-hidden relative group">
+                            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80" alt="Letter to Lorenzo" class="w-full h-full object-cover filter contrast-110">
+                            <div class="absolute inset-0 bg-burgundy-900/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                                <span class="bg-parchment-100 text-burgundy-900 text-xs font-serif font-bold px-3 py-1.5 rounded">View Transcription</span>
+                            </div>
+                        </div>
+                        <h4 class="font-cinzel font-bold text-ink-900 mt-4 text-base">Epistolae, Book IV</h4>
+                        <p class="font-serif text-xs text-ink-600 mt-1">Autograph draft letter from Poliziano to Lorenzo de' Medici regarding library acquisitions.</p>
+                    </div>
+
+                    <div class="bg-parchment-50 border border-parchment-300 p-4 rounded-lg shadow-sm hover:border-gold-500 transition">
+                        <div class="h-48 bg-parchment-300 rounded overflow-hidden relative group">
+                            <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=600&q=80" alt="Inkunabel Miscellanea" class="w-full h-full object-cover filter contrast-110">
+                            <div class="absolute inset-0 bg-burgundy-900/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                                <span class="bg-parchment-100 text-burgundy-900 text-xs font-serif font-bold px-3 py-1.5 rounded">View Editio Princeps</span>
+                            </div>
+                        </div>
+                        <h4 class="font-cinzel font-bold text-ink-900 mt-4 text-base">Miscellanea (1489 Edition)</h4>
+                        <p class="font-serif text-xs text-ink-600 mt-1">Printed by Antonio Miscomini in Florence; decorated with Greek woodcut types.</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- AUTHOR & RESEARCHER BIO SECTION -->
+        <section id="author" class="py-16 md:py-24 bg-parchment-200 border-b border-parchment-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-parchment-50 border border-parchment-300 rounded-lg p-8 md:p-12 shadow-sm">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        
+                        <div class="lg:col-span-4 flex justify-center">
+                            <div class="w-48 h-48 rounded-full border-4 border-gold-500 overflow-hidden shadow-md">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80" alt="Lead Researcher" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-8 text-center lg:text-left space-y-4">
+                            <span class="font-cinzel text-xs font-bold tracking-widest text-burgundy-700 uppercase">Project Director & Author</span>
+                            <h2 class="font-cinzel text-3xl font-extrabold text-burgundy-900">Dr. Elena Vance</h2>
+                            <p class="font-serif text-sm text-ink-700 leading-relaxed">
+                                Dr. Vance is a scholar of Early Modern Italian Literature and Classical Reception. Her research focuses on the intersection of Latin philology, vernacular poetry, and political patronage in 15th-century Florence. This digital monograph portal houses ongoing biographical documentation, digital transcriptions, and critical commentary.
+                            </p>
+                            
+                            <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4 font-serif text-xs text-ink-700">
+                                <span class="bg-parchment-200 px-3 py-1.5 rounded border border-parchment-300"><i class="fa-solid fa-university text-burgundy-700 mr-1.5"></i> Inst. for Renaissance Studies</span>
+                                <span class="bg-parchment-200 px-3 py-1.5 rounded border border-parchment-300"><i class="fa-solid fa-envelope text-burgundy-700 mr-1.5"></i> research@polizianobiography.com</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEWSLETTER / RESEARCH UPDATES SIGNUP SECTION -->
+        <section id="subscribe" class="py-16 md:py-20 bg-burgundy-900 text-parchment-100 relative overflow-hidden">
+            <!-- Decorative background opacity circle -->
+            <div class="absolute -right-16 -bottom-16 w-96 h-96 rounded-full bg-burgundy-700/20 blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <i class="fa-solid fa-feather-pointed text-gold-400 text-3xl mb-4"></i>
+                <h2 class="font-cinzel text-3xl sm:text-4xl font-extrabold text-parchment-100">Join the Research Circle</h2>
+                <p class="font-serif text-parchment-300 mt-3 text-base max-w-xl mx-auto">
+                    Subscribe to receive chapter releases, manuscript discoveries, and notifications when new historiographical notes are published.
+                </p>
+
+                <form id="newsletter-form" onsubmit="handleSubscribe(event)" class="mt-8 max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+                    <input type="email" id="subscriber-email" required placeholder="Enter your academic email..." 
+                           class="flex-1 px-4 py-3 rounded-md bg-burgundy-800 text-parchment-100 placeholder-parchment-400 border border-gold-600/50 focus:outline-none focus:border-gold-400 font-serif text-sm">
+                    <button type="submit" class="px-6 py-3 rounded-md bg-gold-500 hover:bg-gold-400 text-burgundy-900 font-serif font-bold text-sm shadow transition border border-gold-400">
+                        Subscribe
+                    </button>
+                </form>
+
+                <p class="text-[11px] font-sans text-parchment-400 mt-4">
+                    Strictly academic communications. No spam. You may unsubscribe at any time.
+                </p>
+
+                <!-- Confirmation Alert Box -->
+                <div id="subscribe-success" class="hidden mt-6 p-4 rounded bg-burgundy-800 border border-gold-500 text-gold-400 font-serif text-sm">
+                    <i class="fa-solid fa-circle-check mr-2"></i> Thank you! Your email has been added to the research update list.
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-ink-900 text-parchment-300 py-12 border-t border-burgundy-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="font-cinzel font-bold text-parchment-100 text-lg">Angelo Poliziano Project</h3>
+                    <p class="font-serif text-xs text-ink-500 mt-2 leading-relaxed">
+                        A digital humanist archive dedicated to documenting the life, Latin and Italian writings, and philological legacy of Renaissance scholar Angelo Poliziano (1454–1494).
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-cinzel text-sm font-semibold text-gold-400 uppercase tracking-wider mb-3">Navigation</h4>
+                    <ul class="font-serif text-xs space-y-2">
+                        <li><a href="#overview" class="hover:text-parchment-100 transition">Overview & Hero</a></li>
+                        <li><a href="#timeline" class="hover:text-parchment-100 transition">Interactive Chronology</a></li>
+                        <li><a href="#essays" class="hover:text-parchment-100 transition">Research Essays & Notes</a></li>
+                        <li><a href="#archive" class="hover:text-parchment-100 transition">Manuscript Archive</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-cinzel text-sm font-semibold text-gold-400 uppercase tracking-wider mb-3">Citation & Rights</h4>
+                    <p class="font-serif text-xs text-ink-500 leading-relaxed">
+                        Content published under Creative Commons Attribution 4.0 International (CC BY 4.0). Recommended citation format provided on individual essay pages.
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-ink-800 flex flex-col sm:flex-row justify-between items-center text-xs text-ink-500 font-serif">
+                <p>&copy; 2026 Angelo Poliziano Biography Project. All rights reserved.</p>
+                <p class="mt-2 sm:mt-0">Hosted & Maintained on Custom Domain</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL FOR READING FULL ESSAYS -->
+    <div id="essay-modal" class="fixed inset-0 z-50 hidden bg-burgundy-900/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-parchment-100 border-2 border-gold-500 rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative p-6 sm:p-10">
+            
+            <button onclick="closeEssayModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-parchment-300 text-burgundy-900 flex items-center justify-center hover:bg-burgundy-700 hover:text-parchment-100 transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div id="modal-content" class="space-y-4">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile Navigation Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Timeline Filter Functionality
+        function filterTimeline(category) {
+            const items = document.querySelectorAll('.timeline-item');
+            const buttons = document.querySelectorAll('.timeline-filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-burgundy-700', 'text-parchment-100');
+                btn.classList.add('bg-parchment-200', 'text-ink-800');
+            });
+
+            event.target.classList.remove('bg-parchment-200', 'text-ink-800');
+            event.target.classList.add('bg-burgundy-700', 'text-parchment-100');
+
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Newsletter Form Handler
+        function handleSubscribe(event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('subscriber-email');
+            const successBox = document.getElementById('subscribe-success');
+            
+            if(emailInput.value) {
+                successBox.classList.remove('hidden');
+                emailInput.value = '';
+                setTimeout(() => {
+                    successBox.classList.add('hidden');
+                }, 5000);
+            }
+        }
+
+        // Essay Modal Content Store
+        const essaysData = {
+            essay1: {
+                title: "Collating Manuscripts: The Empirical Method of the Miscellanea",
+                category: "Textual Philology • 12 Min Read",
+                date: "November 14, 2026",
+                content: `
+                    <p class="drop-cap font-serif text-ink-800 leading-relaxed text-base">
+                        Prior to Angelo Poliziano, early Renaissance humanists frequently amended classical Latin texts based on stylistic intuition or grammatical preference. In his 1489 masterpiece, <em>Miscellaneorum Centuria Prima</em>, Poliziano instituted a radical methodological shift: empirical collation of ancient codices.
+                    </p>
+                    <h4 class="font-cinzel text-lg font-bold text-burgundy-900 mt-6 mb-2">The Laurentian Library as a Laboratory</h4>
+                    <p class="font-serif text-ink-700 text-sm leading-relaxed">
+                        With unprecedented access to Lorenzo de' Medici’s extensive library, Poliziano inspected early parchment manuscripts rather than late medieval corrupt copies. He scrutinized orthography, letterforms, and manuscript provenance, establishing the genealogical relationships between surviving codices.
+                    </p>
+                    <div class="my-6 p-4 bg-parchment-200 border-l-4 border-burgundy-700 italic font-serif text-ink-800 text-sm">
+                        "Poliziano realized that age and manuscript descent mattered more than elegant Latinity. In doing so, he laid the cornerstone for modern critical editing."
+                    </div>
+                    <p class="font-serif text-ink-700 text-sm leading-relaxed">
+                        This essay examines Chapter 25 of the <em>Miscellanea</em>, where Poliziano restores a disputed passage of Quintilian by citing a 9th-century Carolingian exemplar.
+                    `
+            },
+            essay2: {
+                title: "Myth, Allegory, and Memory in Stanze per la Giostra",
+                category: "Vernacular Poetry • 18 Min Read",
+                date: "October 28, 2026",
+                content: `
+                    <p class="drop-cap font-serif text-ink-800 leading-relaxed text-base">
+                        Written to celebrate Giuliano de' Medici's victory in the joust of 1475, Poliziano’s <em>Stanze per la Giostra</em> represents one of the highest achievements of 15th-century Italian poetry.
+                    </p>
+                    <h4 class="font-cinzel text-lg font-bold text-burgundy-900 mt-6 mb-2">The Realm of Venus & Neoplatonic Ascent</h4>
+                    <p class="font-serif text-ink-700 text-sm leading-relaxed">
+                        In the poem, the hero Iulio (representing Giuliano) turns away from wild hunting under the influence of Love and beholds the nymph Simonetta. Poliziano transforms a courtly tournament into an allegory of spiritual elevation and intellectual enlightenment.
+                    </p>
+                    <p class="font-serif text-ink-700 text-sm leading-relaxed mt-4">
+                        The vivid descriptions of Venus's realm directly inspired Sandro Botticelli's iconic paintings, <em>The Birth of Venus</em> and <em>Primavera</em>, establishing a shared visual and poetic language for Medicean Florence.
+                    </p>
+                `
+            },
+            essay3: {
+                title: "Tensions at Fiesole: Tutor to Piero de' Medici & Clarice Orsini",
+                category: "Medici Court Life • 15 Min Read",
+                date: "September 19, 2026",
+                content: `
+                    <p class="drop-cap font-serif text-ink-800 leading-relaxed text-base">
+                        In the late 1470s, Lorenzo de' Medici entrusted Poliziano with the education of his eldest son, Piero. However, staying at the Medici villa in Fiesole created friction between Poliziano and Lorenzo's wife, Clarice Orsini.
+                    </p>
+                    <h4 class="font-cinzel text-lg font-bold text-burgundy-900 mt-6 mb-2">Humanism versus Traditional Piety</h4>
+                    <p class="font-serif text-ink-700 text-sm leading-relaxed">
+                        Clarice preferred her son to study Latin Psalters and traditional devotional texts, whereas Poliziano insisted on immersive Greek grammar, classical pagan poetry, and rhetoric. Letters surviving from May 1479 reveal Poliziano’s frustration: "As for Clarice, she interferes at every turn..."
+                    </p>
+                    <p class="font-serif text-ink-700 text-sm leading-relaxed mt-4">
+                        This conflict highlights the broader cultural clash between Roman aristocratic piety and Florentine civic humanism during the Renaissance.
+                    </p>
+                `
+            }
+        };
+
+        function openEssayModal(essayId) {
+            const modal = document.getElementById('essay-modal');
+            const modalContent = document.getElementById('modal-content');
+            const data = essaysData[essayId];
+
+            if(data) {
+                modalContent.innerHTML = `
+                    <span class="font-cinzel text-xs font-bold text-burgundy-700 tracking-wider uppercase block">${data.category}</span>
+                    <h2 class="font-cinzel text-2xl sm:text-3xl font-extrabold text-burgundy-900 mt-1">${data.title}</h2>
+                    <p class="text-xs text-ink-500 font-serif italic pb-4 border-b border-parchment-300">Published on ${data.date} • By Dr. Elena Vance</p>
+                    <div class="mt-4">
+                        ${data.content}
+                    </div>
+                `;
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeEssayModal() {
+            const modal = document.getElementById('essay-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>
